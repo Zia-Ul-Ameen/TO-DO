@@ -1,33 +1,34 @@
 body{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     width: 100vw;
-    height: 100vh;
-    padding-top: 50px ;
+    height: 100%;
 }
 
 .form{
     display: flex;
     flex-direction: column;
     align-items: center;
-    align-content: center;
+    margin: 80px auto;
     background-color: rgb(57, 72, 114);
-    width: 40%;
-    height: 100%;
-    padding-top: 50px;
+    width: 50%;
     border-radius: 5px;
+    padding-bottom: 20px;
 }
 .form h1{
     color: rgb(32, 191, 191);
 }
+/* .form h5{
+    position: absolute;
+    top: 29.5%;
+    color: rgb(32, 191, 191);
+    font-size: 15px;
+    font-weight: 600;
+} */
 .form .input{
     
-    width: 60%;
-    height: 25px;
-    border-radius: 10px;
+    width: 80%;
+    border-radius: 5px;
     padding: 5px;
+    font-size: x-small;
 }
 .inputbox{
     display: flex;
@@ -36,36 +37,78 @@ body{
     justify-content: center;
     margin-bottom: 30px;
 }
-.form .add{
-    width: 90px;
+.add{
+    width: 10%;
     margin-left:2px ;
-    border-radius: 10px;
-    height: 38px;
+    border-radius: 5px;
     background-color: rgb(32, 191, 191);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60%;
+    font-weight:700 ;
+    cursor: pointer;
+}
+#edit{
+    display: none;
 }
 .listadded{
     width: 100%;
     display: flex;
     align-items: center;
-flex-direction: column;
+    flex-direction: column;                 
 }
 .form #list{
     display: flex;
     align-items: center;
     justify-content:space-between ;
-    padding: 0px 20px;
-    width: 80%;
-    height: 25px;
+    padding: 0px 10px;
+    width: 85%;
+    height: 22px;
     background-color: rgb(255, 255, 255);
-    border-radius: 2px;
-    font-size: larger;
+    border-radius: 5px;
+    font-size: small;
     font-weight: 500;
     border: 1px solid rgb(40, 40, 40);
     margin-top: 2px;
 }
-#list p{
-display: flex;
-align-items: center;
+
+#list .p{
 color: #2716a7;
 cursor: pointer;
+}
+.listadded{
+    position: relative;
+}
+.edit{
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    right: 15%;
+    color: #000000;
+    cursor: pointer;
+    font-size: small;
+    font-weight: 500;
+    background-color: rgb(230, 233, 230);
+    border-radius: 5px;
+    padding:2px;
+}
+#list .cancelBtn{
+    background-color: rgb(230, 233, 230);
+    border-radius: 5px;
+    padding: 2px;
+    cursor: pointer;
+}
+
+@media screen and (max-width:800px){
+    .form{
+        width: 90%;
+        transition: 1s;
+    }
+}
+@media screen and (min-width:800px){
+    .form{
+        width: 60%;
+        transition: 1s;
+    }
 }

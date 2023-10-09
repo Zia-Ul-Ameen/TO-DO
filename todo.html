@@ -7,55 +7,26 @@
     <link rel="stylesheet" href="todo.css">
 </head>
 <body>
-    <div class="form">
+
+    <div class="form" id="parent">
+
         <h1>To-Do List</h1>
 
-    <div class="inputbox">
-        <input type="text" class="input" id="input" placeholder="What Do You Have Planned">
-        
-        <button type="button" class="add" id="add">ADD TASK</button>
-    </div>
-        
-        <div class="listadded" id="listadded">
+        `<div class="inputbox">
 
+            <input type="text" class="input" id="input" placeholder="What Do You Have Planned">
+        
+            <button type="button" class="add" id="add">ADD</button>
+            <button type="button" class="add" id="edit" >EDIT</button>
+            
+
+        </div>
+        <!-- <h5>ADDED TASKS</h5> -->
+        <div class="listadded" id="listadded">
+        
         </div>
     </div>
 
-    <script>
-        var input = document.getElementById("input");
-        var button = document.getElementById("add");
-        var added = document.getElementById("listadded");
-        var todos=[];
-        button.addEventListener("click",()=>{
-            added.innerHTML = '';
-            todos.push(input.value);
-            for(let i = 0; i < todos.length; i++){
-            let todo = document.createElement('div')
-            todo.id='list';
-            let todoText = document.createElement('p');
-            todoText.innerText = todos[i];
-            let cancel = document.createElement('p');
-            cancel.innerText ="x";
-            cancel.className = 'cancelBtn';
-            cancel.id= i;
-            todo.appendChild(todoText);
-            todo.appendChild(cancel);
-            added.appendChild(todo)
-            }
-            let cancelBtn = document.querySelectorAll(".cancelBtn");
-            for(i = 0; i < cancelBtn.length; i++){
-                cancelBtn[i].addEventListener("click", (e) => {
-                    let deleteElement = e.target.id;
-                    todos.splice(deleteElement, 1);
-                    e.target.parentElement.remove();
-                });
-            }
-           input.value = '';
-        });
-
-
-
-
-    </script>
+    <script src="todo.js"> </script>
 </body>
 </html>
