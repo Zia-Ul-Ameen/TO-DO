@@ -71,12 +71,12 @@ body{
     font-weight: 500;
     border: 1px solid rgb(40, 40, 40);
     margin-top: 2px;
+    cursor: pointer;
 }
 
-#list .p{
-color: #2716a7;
-cursor: pointer;
-}
+/* .linethrough:active{
+    text-decoration: line-through;
+} */
 .listadded{
     position: relative;
 }
@@ -100,15 +100,20 @@ cursor: pointer;
     cursor: pointer;
 }
 
-@media screen and (max-width:800px){
+
+@media (max-width:800px){
     .form{
         width: 90%;
         transition: 1s;
     }
 }
-@media screen and (min-width:800px){
+@media (min-width:800px){
     .form{
         width: 60%;
         transition: 1s;
     }
+}
+.lineThrough{
+    text-decoration: line-through;
+    color: rgb(239, 195, 33);
 }

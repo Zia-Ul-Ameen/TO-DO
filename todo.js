@@ -5,11 +5,11 @@ let edit = document.getElementById('edit');
 
 
 let todos = JSON.parse(localStorage.getItem('todosArray'));
-
 let currentEditedId = null;
+
 const domRendering = () => {
-    console.log('dgjnsgnjioj');
     localStorage.setItem('todosArray', JSON.stringify(todos));
+
     for(let i = 0; i < todos.length; i++){
 
         let newNode = document.createElement('div')
@@ -18,6 +18,7 @@ const domRendering = () => {
         let todoText = document.createElement('p');
         todoText.className = 'p';
         todoText.innerText = todos[i];
+        todoText.onclick = lineThrough;
     
         let cancel = document.createElement('p');
         cancel.innerText ="Clear";
@@ -45,8 +46,7 @@ const onEdit = (e) => {
     let edited = todos[e.target.id];
     input.value = edited;
     currentEditedId = e.target.id;
-    // added.innerHTML = '';
-    // domRendering();
+
 }
 const onDelete = (e) => {
         const selectedId = e.target.id;
@@ -91,6 +91,15 @@ const onEdited = (e) =>{
     added.innerHTML = '';
     domRendering();
     input.value = '';
+}
+const lineThrough = (e) => {
+    // if(Array.from(e.target.classList).includes('lineThrough')){
+    //     e.target.classList.remove('lineThrough');
+    // }else{
+    //     e.target.classList.add('lineThrough');
+    // }
+
+    e.target.classList.toggle('lineThrough');
 }
 edit.addEventListener('click', onEdited);
 domRendering();
